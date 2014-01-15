@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row feedItem" ng-repeat="feedItem in feedItems">
+    <div class="col-md-3 feedItemToDisplay thumbnail feedItem-listing"
+         ng-if="feedItemToDisplay.picture.size_180 != null"
+         ng-repeat="feedItemToDisplay in feedItem | orderBy:orderProp">
+      <img ng-src="{{feedItemToDisplay.picture.size_180}}" class="img-responsive img-rounded">
+      <p ng-if="feedItemToDisplay.first_name != null">FIRST_NAME : {{feedItemToDisplay.first_name}}</p>
+      <p ng-if="feedItemToDisplay.last_name != null">LAST_NAME : {{feedItemToDisplay.last_name}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- Still in test -->
+  <!--<div class="row">
+    <div class="col-md-8">
+      Search: <input ng-model="queryEntries">
+    </div>
+  </div>-->
+  <div class="row feedEntries" ng-repeat="feedEntry in feedEntries">
+    <div ng-if="feedEntryToDisplay.id != null && feedEntryToDisplay.picture_url != null"
+         class="col-md-4 thumbnail feedEntryToDisplay-listing" 
+         ng-repeat="feedEntryToDisplay in feedEntry | orderBy:orderProp | filter:queryEntries">
+      <a href="#/feedItems/{{feedEntryToDisplay.id}}">  
+        <img ng-if="feedEntryToDisplay.picture_url != null"
+             ng-src="{{feedEntryToDisplay.picture_url}}"
+             class="img-responsive img-rounded"/>
+      </a>
+      <p ng-if="feedEntryToDisplay.title != null">TITLE : {{feedEntryToDisplay.title}}</p>
+      <p ng-if="feedEntryToDisplay.subtitle != null">SUBTITLE : {{feedEntryToDisplay.subtitle}}</p>
+      <p ng-if="feedEntryToDisplay.name != null">NAME : {{feedEntryToDisplay.name}}</p>
+      <p ng-if="feedEntryToDisplay.description != null">DESCRIPTION : {{feedEntryToDisplay.description}}</p>
+    </div>
+  </div>
+</div>
