@@ -3,16 +3,12 @@
     <div class="col-md-3 feedItemToDisplay thumbnail feedItem-listing"
         ng-if="feedItemToDisplay.id != null"
         ng-repeat="feedItemToDisplay in feedItems.feed_items | orderBy:orderProp">
-        <!--<div ng-repeat="meta_item_picture_id in feedItemToDisplay.meta_item_picture_ids">-->
          	<img ng-repeat="meta_item_picture in feedItems.meta_item_pictures"
          		   ng-if="meta_item_picture.id == feedItemToDisplay.meta_item_picture_ids[0]"
 		      	   ng-src="{{feedItems.meta_item_pictures[$index].size_600}}" 
 		      	   class="img-responsive img-rounded">
-		<!--</div>-->
-		<p ng-if="feedItemToDisplay.id != null">ID : {{feedItemToDisplay.id}}</p>
-		<p ng-if="feedItemToDisplay.title != null">TITLE : {{feedItemToDisplay.title}}</p>
-		<p ng-if="feedItemToDisplay.description_short != null">DESCRIPTION_SHORT : {{feedItemToDisplay.description_short}}</p>
-		<p ng-if="feedItemToDisplay.price_cents != null">PRICE_CENTS : {{feedItemToDisplay.price_cents}}</p>
+		<text class="text-primary"><strong>{{feedItemToDisplay.title}}</strong></text><br/>
+		<text class="text-primary">{{feedItemToDisplay.price_cents/100|currency}}</text>
     </div>
   </div>
 </div>

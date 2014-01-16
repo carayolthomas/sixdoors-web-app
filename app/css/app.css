@@ -36,7 +36,7 @@ img.phone {
   float: left;
   margin-right: 3em;
   margin-bottom: 2em;
-  background-color: white;
+  background-color: #108a93;
   padding: 2em;
   height: 400px;
   width: 400px;
@@ -51,7 +51,7 @@ ul.phone-thumbs li {
   border: 1px solid black;
   display: inline-block;
   margin: 1em;
-  background-color: white;
+  background-color: #108a93;
 }
 
 ul.phone-thumbs img {

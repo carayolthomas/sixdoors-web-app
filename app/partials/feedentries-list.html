@@ -1,17 +1,14 @@
 <div class="container">
-  <div class="row">
     <div ng-if="feedEntryToDisplay.id != null && feedEntryToDisplay.picture_url != null"
-         class="col-md-4 thumbnail feedEntryToDisplay-listing" 
+         class="row" 
          ng-repeat="feedEntryToDisplay in feedEntries.collections | orderBy:orderProp | filter:queryEntries">
       <a href="#/feedItems/{{feedEntryToDisplay.id}}">  
         <img ng-if="feedEntryToDisplay.picture_url != null"
              ng-src="{{feedEntryToDisplay.picture_url}}"
              class="img-responsive img-rounded"/>
       </a>
-      <p ng-if="feedEntryToDisplay.title != null">TITLE : {{feedEntryToDisplay.title}}</p>
-      <p ng-if="feedEntryToDisplay.subtitle != null">SUBTITLE : {{feedEntryToDisplay.subtitle}}</p>
-      <p ng-if="feedEntryToDisplay.name != null">NAME : {{feedEntryToDisplay.name}}</p>
-      <p ng-if="feedEntryToDisplay.description != null">DESCRIPTION : {{feedEntryToDisplay.description}}</p>
+      <text class="text-primary"><strong>{{feedEntryToDisplay.title}}</strong></text><br/>
+      <text class="text-primary">{{feedEntryToDisplay.subtitle}}</text>
+      <hr/>
     </div>
-  </div>
 </div>
