@@ -4,7 +4,7 @@
 
 var sixdoorsApp = angular.module('sixdoorsApp', [
   'ngRoute',
-  'sixdoorsAnimations',
+  //'sixdoorsAnimations',
   'sixdoorsControllers',
   //'sixdoorsFilters',
   'sixdoorsServices'

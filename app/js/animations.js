@@ -1,6 +1,6 @@
 var sixdoorsAnimations = angular.module('sixdoorsAnimations', ['ngAnimate']);
 
-sixdoorsAnimations.animation('.feedEntryToDisplay', function() {
+/*sixdoorsAnimations.animation('.feedEntryToDisplay', function() {
 
   var animateUp = function(element, className, done) {
     if(className != 'active') {
@@ -49,4 +49,4 @@ sixdoorsAnimations.animation('.feedEntryToDisplay', function() {
     addClass: animateUp,
     removeClass: animateDown
   };
-});
+});*/
