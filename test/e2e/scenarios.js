@@ -2,78 +2,40 @@
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
-describe('PhoneCat App', function() {
+describe('Sixdoors App', function() {
 
-  it('should redirect index.html to index.html#/phones', function() {
+  it('should redirect index.html to index.html#/feedEntries', function() {
     browser().navigateTo('app/index.html');
-    expect(browser().location().url()).toBe('/phones');
+    expect(browser().location().url()).toBe('/feedEntries');
   });
 
 
-  describe('Phone list view', function() {
+  describe('feedEntries list view', function() {
 
     beforeEach(function() {
-      browser().navigateTo('app/index.html#/phones');
+      browser().navigateTo('app/index.html#/feedEntries');
     });
 
 
-    it('should filter the phone list as user types into the search box', function() {
-      expect(repeater('.phones li').count()).toBe(20);
-
-      input('query').enter('nexus');
-      expect(repeater('.phones li').count()).toBe(1);
-
-      input('query').enter('motorola');
-      expect(repeater('.phones li').count()).toBe(8);
+    it('should count the number of feedEntries as 2', function() {
+      expect(repeater('.container div').count()).toBe(2);
     });
 
 
-    it('should be possible to control phone order via the drop down select box', function() {
-      input('query').enter('tablet'); //let's narrow the dataset to make the test assertions shorter
-
-      expect(repeater('.phones li', 'Phone List').column('phone.name')).
-          toEqual(["Motorola XOOM\u2122 with Wi-Fi",
-                   "MOTOROLA XOOM\u2122"]);
-
-      select('orderProp').option('Alphabetical');
-
-      expect(repeater('.phones li', 'Phone List').column('phone.name')).
-          toEqual(["MOTOROLA XOOM\u2122",
-                   "Motorola XOOM\u2122 with Wi-Fi"]);
-    });
-
-
-    it('should render phone specific links', function() {
-      input('query').enter('nexus');
-      element('.phones li a').click();
-      expect(browser().location().url()).toBe('/phones/nexus-s');
+    it('should render feedEntry2 specific links', function() {
+      element('.container div a').click();
+      expect(browser().location().url()).toBe('/feedItems/2');
     });
   });
 
-
-  describe('Phone detail view', function() {
+  describe('feedItems list view', function() {
 
     beforeEach(function() {
-      browser().navigateTo('app/index.html#/phones/nexus-s');
+      browser().navigateTo('app/index.html#/feedItems/1');
     });
 
-
-    it('should display nexus-s page', function() {
-      expect(binding('phone.name')).toBe('Nexus S');
-    });
-
-
-    it('should display the first phone image as the main phone image', function() {
-      expect(element('img.phone.active').attr('src')).toBe('img/phones/nexus-s.0.jpg');
-    });
-
-
-    it('should swap main image if a thumbnail image is clicked on', function() {
-      element('.phone-thumbs li:nth-child(3) img').click();
-      expect(element('img.phone.active').attr('src')).toBe('img/phones/nexus-s.2.jpg');
-
-      element('.phone-thumbs li:nth-child(1) img').click();
-      expect(element('img.phone.active').attr('src')).toBe('img/phones/nexus-s.0.jpg');
+    it('should count the number of feedItems as 3', function() {
+      expect(repeater('.row div').count()).toBe(3);
     });
   });
 });
