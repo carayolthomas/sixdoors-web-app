@@ -302,8 +302,9 @@ body {
   font-family: "Cabin", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #ffffff;
-  background-color: #108a93;
+  color: #575859;
+  background: linear-gradient(to right, #80BAF4, #F7FAFE);
+
 }
 
 input,
@@ -344,6 +345,7 @@ img {
 
 .img-rounded {
   border-radius: 6px;
+  margin-bottom: 3px;
 }
 
 .img-thumbnail {
@@ -806,6 +808,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 25px;
 }
 
 .container:before,
@@ -932,6 +935,15 @@ pre code {
   clear: both;
 }
 
+.collections {
+  transition:font-size 0.5s;
+  margin-bottom: 1.5em;
+}
+
+.collections:hover {
+  font-size: 150%;
+}
+
 .col-xs-1,
 .col-sm-1,
 .col-md-1,
@@ -1039,6 +1051,12 @@ pre code {
 
 .col-xs-3 {
   width: 25%;
+  margin-right: 0.5em;
+}
+
+.col-xs-3:hover {
+  background-color: #494A4A; 
+  color: #ffffff; 
 }
 
 .col-xs-2 {
@@ -1760,7 +1778,7 @@ th {
 }
 
 .table .table {
-  background-color: #108a93;
+  background-color: #FEFEFE;
 }
 
 .table-condensed > thead > tr > th,
@@ -5589,8 +5607,9 @@ a.list-group-item.active > .badge,
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.428571429;
-  background-color: #108a93;
-  border: 1px solid #dddddd;
+  background-color: #FEFEFE;
+  border: 3px solid #515151;
+  color: #515151;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
